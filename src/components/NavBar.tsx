@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
+import LogoKroni from './LogoKroni';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +30,11 @@ const NavBar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="/" className="text-kroni-purple font-bold text-2xl">
-              KRONI<span className="text-kroni-teal">TECH</span>
-            </a>
+            <LogoKroni 
+              width={120} 
+              className="inline-block align-middle mr-2" 
+              variant={isScrolled ? 'morado' : 'azul'}
+            />
           </div>
           
           <div className="hidden md:flex space-x-8 items-center">

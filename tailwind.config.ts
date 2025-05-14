@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -108,7 +107,8 @@ export default {
 				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
 			},
 			fontFamily: {
-				filson: ['"Filson Pro Regular"', 'sans-serif'],
+				filson: ['"Filson Pro"', 'sans-serif'],
+				themify: ['Themify', 'sans-serif'],
 			},
 		}
 	},
