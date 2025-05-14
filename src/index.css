@@ -1,3 +1,6 @@
+
+@import url('https://cdn.fontshare.com/wf/UPEYC73I6VLGFIWHOEL5WWSLZ4WORTYS/5M2IO4GUEZUTIHWD3TC7KVDWPEL2NNME/ASQTYVK3PFYOF6UMX43C3BDBRSNQOVVT.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +99,27 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-filson;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(72, 21, 73, 0.1) 0%, rgba(156, 237, 232, 0.1) 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(72, 21, 73, 0.15);
+}
+
+.bg-gradient-kroni {
+  background: linear-gradient(135deg, rgba(72, 21, 73, 0.9) 0%, rgba(156, 237, 232, 0.4) 100%);
 }
