@@ -28,7 +28,7 @@ const HeroSection = () => {
                 Get Started
                 <ArrowRight size={16} className="ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:bg-opacity-10">
+              <Button size="lg" variant="outline" className="border-white text-kroni-purple hover:bg-white hover:bg-opacity-10">
                 View Pricing
               </Button>
             </div>
