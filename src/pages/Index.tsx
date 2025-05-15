@@ -7,6 +7,7 @@ import DashboardSection from "@/components/DashboardSection";
 import PricingSection from "@/components/PricingSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import HowItWorksSection from "@/components/HowItWorksSection";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <NavBar />
       <HeroSection />
       <ServicesSection />
+      <HowItWorksSection />
       <IntegrationsSection />
       <DashboardSection />
       <PricingSection />
