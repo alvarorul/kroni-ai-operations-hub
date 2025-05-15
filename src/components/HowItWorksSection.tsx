@@ -32,6 +32,7 @@ interface StepProps {
   effect?: "hover" | "click" | "scroll" | "none";
   additionalContent?: React.ReactNode;
   index: number;
+  isLast?: boolean;
 }
 
 const Step: React.FC<StepProps> = ({ 
@@ -40,7 +41,8 @@ const Step: React.FC<StepProps> = ({
   icon, 
   effect = "none",
   additionalContent,
-  index
+  index,
+  isLast = false
 }) => {
   const [hovered, setHovered] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -70,7 +72,7 @@ const Step: React.FC<StepProps> = ({
 
   return (
     <div 
-      className={`relative flex flex-col items-center text-center bg-white rounded-xl p-6 shadow-md border border-gray-100 h-full transition-all duration-300 ${hovered ? 'transform -translate-y-2' : ''}`}
+      className="relative flex flex-col items-center text-center h-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => {
         setHovered(false);
@@ -80,26 +82,36 @@ const Step: React.FC<StepProps> = ({
       tabIndex={0}
       aria-label={`Paso ${index + 1}: ${title}`}
     >
-      <div className={`w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-kroni-purple/10 to-kroni-teal/10 mb-4 ${effect === "hover" && index === 2 ? (hovered ? 'transform translate-x-2' : '') : ''} transition-all duration-300`}>
-        <div className={`text-kroni-purple ${effect === "hover" && index === 4 && blink ? 'text-yellow-500' : ''}`}>
-          {icon}
+      {/* Numbered Circle */}
+      <div className="absolute -top-4 flex justify-center items-center">
+        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-kroni-purple text-white font-bold shadow-md z-10">
+          {index + 1}
         </div>
       </div>
-      <h3 className="font-semibold text-lg mb-2 text-kroni-dark">{title}</h3>
-      {effect === "hover" && index !== 4 && hovered ? (
-        <p className="text-sm text-kroni-dark/80 animate-fade-in">{description}</p>
-      ) : effect !== "hover" ? (
-        <p className="text-sm text-kroni-dark/80">{description}</p>
-      ) : null}
       
-      {effect === "scroll" && (
-        <div className="w-full mt-4">
-          <Progress value={progress} className="h-2" />
-          <p className="text-xs mt-1 text-right font-mono">{progress}% precisión de stock</p>
-        </div>
+      {/* Connector Line */}
+      {!isLast && (
+        <div className="hidden md:block absolute top-0 left-1/2 w-full h-0.5 bg-gradient-to-r from-kroni-purple to-kroni-teal" style={{ transform: "translateY(1rem)" }} />
       )}
+      
+      <div className={`relative flex flex-col items-center text-center bg-white rounded-xl p-6 pt-8 shadow-md border border-gray-100 h-full transition-all duration-300 mt-4 ${hovered ? 'transform -translate-y-2' : ''}`}>
+        <div className={`w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-kroni-purple/10 to-kroni-teal/10 mb-4 ${effect === "hover" && index === 2 ? (hovered ? 'transform translate-x-2' : '') : ''} transition-all duration-300`}>
+          <div className={`text-kroni-purple ${effect === "hover" && index === 4 && blink ? 'text-yellow-500' : ''}`}>
+            {icon}
+          </div>
+        </div>
+        <h3 className="font-semibold text-lg mb-2 text-kroni-dark">{title}</h3>
+        <p className="text-sm text-kroni-dark/80">{description}</p>
+        
+        {effect === "scroll" && (
+          <div className="w-full mt-4">
+            <Progress value={progress} className="h-2" />
+            <p className="text-xs mt-1 text-right font-mono">{progress}% precisión de stock</p>
+          </div>
+        )}
 
-      {additionalContent}
+        {additionalContent}
+      </div>
     </div>
   );
 };
@@ -229,6 +241,7 @@ const HowItWorksSection: React.FC = () => {
                   effect={step.effect} 
                   additionalContent={step.additionalContent}
                   index={index}
+                  isLast={index === steps.length - 1}
                 />
               </div>
             </CarouselItem>
@@ -253,7 +266,7 @@ const HowItWorksSection: React.FC = () => {
 
   // Versión desktop: grid con todos los pasos
   const desktop = (
-    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 relative">
       {steps.map((step, index) => (
         <Step 
           key={index} 
@@ -263,6 +276,7 @@ const HowItWorksSection: React.FC = () => {
           effect={step.effect} 
           additionalContent={step.additionalContent}
           index={index}
+          isLast={index === steps.length - 1}
         />
       ))}
     </div>
