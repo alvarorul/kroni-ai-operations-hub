@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "tagline": "Logística impulsada por IA",
+    "title": "Enfócate en <1>Vender</1>,<br />Nosotros manejamos las <1>Operaciones</1>",
+    "description": "Kroni Technologies ofrece soluciones 3PL impulsadas por IA con velocidad y calidad sin igual. Déjanos manejar tu logística mientras tú haces crecer tu negocio.",
+    "getStarted": "Comenzar",
+    "viewPricing": "Ver Precios"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "description": "Soluciones logísticas integrales para tu negocio de e-commerce"
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "description": "Proceso simple y eficiente para tu logística"
+  },
+  "integrations": {
+    "title": "Integraciones",
+    "description": "Conecta con tus plataformas favoritas"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Control total sobre tus operaciones"
+  },
+  "pricing": {
+    "title": "Precios",
+    "description": "Planes adaptados a tu negocio"
+  },
+  "cta": {
+    "title": "¿Listo para optimizar tu logística?",
+    "description": "Únete a cientos de empresas que confían en Kroni",
+    "button": "Comenzar Ahora"
+  },
+  "onboarding": {
+    "title": "Onboarding Kroni",
+    "adminData": {
+      "title": "Datos del administrador de cuenta",
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "email": "Email",
+      "phone": "Teléfono"
+    },
+    "companyData": {
+      "title": "Datos de la empresa",
+      "name": "Nombre de la empresa",
+      "address": "Calle y número",
+      "city": "Ciudad",
+      "state": "Estado/Provincia",
+      "country": "País",
+      "postalCode": "Código Postal",
+      "selectCountry": "Selecciona un país"
+    },
+    "initialQuestions": {
+      "title": "Preguntas iniciales",
+      "description": "Estas preguntas nos ayudarán a entender tu infraestructura de e-commerce y logística",
+      "hasStore": "¿Tienes una tienda en línea en funcionamiento?",
+      "platform": "Plataformas de e-commerce",
+      "storeUrl": "URLs de las tiendas",
+      "orderVolume": "Volumen aproximado de pedidos al mes",
+      "selectVolume": "Selecciona un rango",
+      "hasCsat": "¿Usas ya algún sistema de atención al cliente?",
+      "whichCsat": "¿Cuál?",
+      "yes": "Sí",
+      "no": "No"
+    },
+    "credentials": {
+      "title": "Accesos y credenciales",
+      "description": "Para integrar Kroni a tu plataforma y configurar envíos optimizados necesitamos",
+      "apiUrl": "URL de la API o panel de e-commerce",
+      "apiUser": "Usuario/API Key",
+      "apiSecret": "Token/Secreto"
+    },
+    "additionalUsers": {
+      "title": "¿Alguien más de tu equipo debería tener acceso?",
+      "user1": {
+        "name": "Usuario 1 | Nombre completo",
+        "email": "Usuario 1 | Email",
+        "permission": "Tipo de permiso"
+      },
+      "user2": {
+        "name": "Usuario 2 | Nombre completo",
+        "email": "Usuario 2 | Email",
+        "permission": "Tipo de permiso"
+      },
+      "permissions": {
+        "admin": "Administrador",
+        "restricted": "Restringido"
+      }
+    },
+    "documents": {
+      "title": "Documentos y recursos",
+      "description": "Adjunta aquí tu guía de procesos logísticos o cualquier documento relevante"
+    },
+    "submit": "ENVIAR ONBOARDING"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+} 
